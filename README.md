@@ -20,8 +20,8 @@ Those who wish to contribute can make necessary changes and make a PR,If there a
 * You Are Done!! :wink:
 
 ## Screenshots
-![](https://github.com/aswinzz/weatherapp/blob/master/scr1?raw=true)
-![](https://github.com/aswinzz/weatherapp/blob/master/scr2?raw=true)
-![](https://github.com/aswinzz/weatherapp/blob/master/scr3?raw=true)
+![](https://github.com/aswinzz/weatherapp/blob/master/scr1.png?raw=true)
+![](https://github.com/aswinzz/weatherapp/blob/master/scr2.png?raw=true)
+![](https://github.com/aswinzz/weatherapp/blob/master/scr3.png?raw=true)
 
 
