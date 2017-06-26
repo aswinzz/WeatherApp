@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,700" rel="stylesheet">
+<script src="https://use.fontawesome.com/20df5cf3d4.js"></script>
+  
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css'>
+<link rel='stylesheet prefetch' href='css/oprnrv.css'>
+
+      <link rel="stylesheet" href="css/styler.css">
+<style type="text/css">
+	@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+
+
+div.table-title {
+   display: block;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+}
+
+.table-title h3 {
+   color: #fafafa;
+   font-size: 30px;
+   font-weight: 400;
+   font-style:normal;
+   font-family: "Roboto", helvetica, arial, sans-serif;
+   text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+   text-transform:uppercase;
+}
+
+
+/*** Table Styles **/
+
+.table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 320px;
+  margin: auto;
+  max-width: 600px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:#1b1e24;
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+  border-bottom: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+
+</style>
+  
+</head>
+
+<body>
+  <body>
+	<!-- Status Bar -->
+	<div id="status">
+		<p></p>
+		<button class="close"><i class="fa fa-times" aria-hidden="true"></i></button>
+	</div>
+	<!-- Current Weather -->
+	<div id="current" class="wrapper">
+		
+		<h1 class="location"><%= city %></h1>
+		<h2 class="date"><%= result[0].location.name %></h2>
+
+		
+	<!-- .cloudy -->
+	<div class="weatherIcon">
+		<div class="<%= result[0].current.skytext %>">
+			<div class="inner"></div>
+		</div>
+	</div>
+		
+		
+	</div>
+<table class="table-fill">
+<tbody class="table-hover">
+<tr>
+<td class="text-left">Coordinates</td>
+<td class="text-left"><%= result[0].location.lat %>,<%= result[0].location.long %></td>
+</tr>
+<tr>
+<td class="text-left">Weather</td>
+<td class="text-left"><%= result[0].current.skytext %></td>
+</tr>
+<tr>
+<td class="text-left">Humidity</td>
+<td class="text-left"><%= result[0].current.humidity %></td>
+</tr>
+<tr>
+<td class="text-left">Windspeed</td>
+<td class="text-left"><%= result[0].current.windspeed %></td>
+</tr>
+<tr>
+<td class="text-left">Temp</td>
+<td class="text-left"><%= result[0].current.temperature %></td>
+</tr>
+</tbody>
+</table>
+	<footer>
+		<p id="lastUpdated">Last updated at <%= result[0].current.observationtime %></p>
+		<p>Created by <a href="http://aswinzz.com/" title="Visit Profile" target="_blank">aswinzz</a>| <a href="https://github.com/aswinzz/weatherapp" title="Visit Profile" target="_blank">Repo</a> | Weather data from <a href="https://www.wunderground.com/" title="Wunderground.com" target="_blank">Wunderground</a></p>
+	</footer>
+</body>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
